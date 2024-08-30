@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Task 2
+  description: |-
+    Task 2 API
+  contact:
+    email: tcp6550@gmail.com
+  version: 1.0.11
+servers:
+  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: test
+paths:
+  /test:
+    post:
+      tags:
+        - test
+      summary: Problem status update
+      description: Update problem status and count of "true"
+      operationId: problemUpdate
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        '400':
+          description: Client Error
+        '500':
+          description: Internal Server Error
+components:
+  schemas:
+    Task:
+      properties:
+        total:
+          type: integer
+          format: int64
+          example: 10

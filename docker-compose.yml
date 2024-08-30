@@ -1,0 +1,47 @@
+services:
+
+  db:
+    image: mysql:8.0
+    restart: no
+    volumes:
+      - task2-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: test
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+    ports:
+      - 33306:3306
+
+
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on: 
+      - db
+    restart: no
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=db
+      - PMA_USER=user
+      - PMA_PASSWORD=secret
+
+
+  nest:
+    image: node:lts
+    depends_on: 
+      - db
+    restart: no
+    volumes:
+      - ./nest:/opt/nest
+    working_dir: /opt/nest
+    command: [ "yarn", "start:dev" ]
+    ports:
+      - 3000:3000
+
+
+
+
+volumes:
+  task2-mysql-data:
