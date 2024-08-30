@@ -9,11 +9,17 @@ export class TestService {
 
   async test() {
     const result = await this.usersService.test();
-    return ('total = ' + result.affected)
+    const total = {
+      total: result.affected
+    }
+    return (total)
   }
 
   async bar() {
     const result = await this.usersService.bar();
-    return ('total = ' + result.affected)
+    const total = {
+      total: result.affected
+    }
+    return (total)
   }
 }

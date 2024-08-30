@@ -19,8 +19,8 @@ paths:
       description: Update problem status and count of "true"
       operationId: problemUpdate
       responses:
-        '200':
-          description: Successful operation
+        '201':
+          description: Created
           content:
             application/json:
               schema:

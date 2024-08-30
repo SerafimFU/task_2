@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm'
 
 /* Структура таблицы USER в БД */
 
@@ -19,6 +19,7 @@ export class Users {
   @Column({ type: "tinyint" })
   sex: number;
 
+  @Index()
   @Column({ default: false })
   problem: boolean;
 
