@@ -1,16 +1,16 @@
-Тестовое задание. </br>
+Test task. </br>
 
-В бд может быть более 1 миллиона пользователей (набить данными бд нужно самостоятельно. Например, написать миграцию, которая это сделает). Каждый пользователь имеет поля: </br>
-- Имя
-- Фамилия
-- Возраст
-- Пол
-- проблемы: boolean // есть ли проблемы у пользователя </br>
+The database can contain more than 1 million users (you need to fill the database with data yourself. For example, write a migration that will do this). Each user has fields: </br>
+- Name
+- Surname
+- Age
+- Gender
+- problems: boolean // whether the user has problems </br>
 
-Нужно сделать endpoint, который проставить флаг проблемы у пользователей в false и посчитает, сколько пользователей имело true в этом флаге. </br>
+We need to create an endpoint that will set the problem flag for users to false and count how many users had true in this flag. </br>
 
-swagger/openapi.yaml - swagger представление API </br>
-swagger/alg.sql - запрос для наполнения базы данных(данные имен и фамилий взяты из одноименных таблиц созданных в ручную) </br>
-scr/.. - nest.js логика </br>
+swagger/openapi.yaml - swagger API </br>
+swagger/alg.sql - query for filling the database (data on names and surnames taken from tables of the same name created manually) </br>
+scr/.. - nest.js logic </br>
 
 

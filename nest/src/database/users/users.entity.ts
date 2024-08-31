@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm'
 
-/* Структура таблицы USER в БД */
+/* USER`s stucture */
 
 @Entity()
 export class Users {
